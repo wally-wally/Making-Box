@@ -1,0 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #322c2c;
+  color: #fff8a8;
+  font-family: 'Gugi';
+  box-sizing: border-box;
+  font-size: 22px;
+}
