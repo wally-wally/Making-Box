@@ -45,7 +45,7 @@
 :heavy_check_mark: <b>Installation</b>
 
 ```bash
-$ cd art-works
+$ cd making-box
 $ npm install
 ```
 
