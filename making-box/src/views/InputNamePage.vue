@@ -1,11 +1,11 @@
 <template>
-  <div class="input-name-wrapper">
+  <div class="wrapper">
     <div class="input-box">
       <div class="alert-message">이름을 작성해주세요.</div>
-      <div class="input-wrapper">
+      <form class="input-wrapper" @submit.prevent="goBoxChoice">
         <input type="text" v-model="name" placeholder="이름">
-        <i class="fas fa-caret-square-right" @click="goBoxChoice"></i>
-      </div>
+        <i class="fas fa-caret-square-right" type="submit" @click="goBoxChoice"></i>
+      </form>
       <div v-if="clicked" class="warning-message">이름을 1자 이상 작성해주세요.</div>
     </div>
   </div>
@@ -33,17 +33,9 @@ export default {
 </script>
 
 <style scoped>
-.input-name-wrapper {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .alert-message {
   margin-bottom: 30px;
-  font-size: 22px;
+  font-size: calc(1.1rem + 0.5vw);
 }
 
 .input-wrapper {
@@ -56,7 +48,13 @@ export default {
 input {
   padding: 8px;
   font-size: 15px;
-  margin: 0 6px;
+  margin-right: 10px;
+  background-color: #333;
+  border: transparent;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  color: #eee;
 }
 
 i {

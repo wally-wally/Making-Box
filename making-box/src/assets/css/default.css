@@ -8,3 +8,12 @@ html, body {
   box-sizing: border-box;
   font-size: 22px;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}

@@ -1,7 +1,12 @@
 <template>
-  <div class="box-name-wrapper">
-    <div v-if="clickCount === 0" class="message">이제 이 박스는 <span class="box-name">"{{ this.$store.state.boxName }}"</span> 이에요.</div>
-    <div v-else class="message"><span class="box-name">"{{ this.$store.state.boxName }}"</span>을(를) 완벽한 박스로 만들어보아요.</div>
+  <div class="wrapper">
+    <div v-if="clickCount === 0" class="message">
+      <span>이제 이 박스는</span>
+      <span><span class="box-name">"{{ this.$store.state.boxName }}"</span> 이에요.</span>
+      </div>
+    <div v-else class="message">
+      <span><span class="box-name">"{{ this.$store.state.boxName }}"</span>을(를) </span>
+      <span>완벽한 박스로 만들어보아요.</span></div>
     <div class="next-btn" @click="addClickCount">
       <i class="fas fa-caret-right"></i>
     </div>
@@ -27,12 +32,19 @@ export default {
 </script>
 
 <style scoped>
-.box-name-wrapper {
-  text-align: center;
+.message {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.message > span:first-child {
+  padding: 0 12px;
 }
 
 .box-name {
-  font-size: 30px;
+  font-size: calc(1.1rem + 0.5vw);
 }
 
 .next-btn {
