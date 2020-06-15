@@ -11,7 +11,8 @@ export const store = new Vuex.Store({
     email: '',
     token: '',
     boxName: '',
-    boxType: ''
+    boxType: '',
+    tool: ''
   },
   mutations: {
     saveUserInfo(state, userInfo) {
@@ -25,6 +26,9 @@ export const store = new Vuex.Store({
     },
     saveBoxType(state, boxType) {
       state.boxType = boxType
+    },
+    saveTool(state, tool) {
+      state.tool = tool
     }
   },
   actions: {

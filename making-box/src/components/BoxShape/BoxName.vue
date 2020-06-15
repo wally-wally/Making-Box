@@ -24,7 +24,7 @@ export default {
     addClickCount() {
       this.clickCount++
       if (this.clickCount === 2) {
-        this.$router.push('/tool/select')
+        this.$router.push('/tool')
       }
     }
   }

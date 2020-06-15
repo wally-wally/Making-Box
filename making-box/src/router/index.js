@@ -27,10 +27,13 @@ export const router = new Router({
     },
     {
       path: '/tool',
-      component: () => import('@/views/ToolPage.vue'),
-      children: [
-        { path: 'select', name: 'SelectTool', component: () => import('@/components/BoxTools/SelectTool.vue') },
-      ]
+      name: 'ToolPage',
+      component: () => import('@/views/ToolPage.vue')
+    },
+    {
+      path: '/hole',
+      name: 'HolePage',
+      component: () => import('@/views/HolePage.vue')
     },
   ]
 })
