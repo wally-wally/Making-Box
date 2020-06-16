@@ -31,9 +31,9 @@ export const router = new Router({
       component: () => import('@/views/ToolPage.vue')
     },
     {
-      path: '/hole',
-      name: 'HolePage',
-      component: () => import('@/views/HolePage.vue')
+      path: '/size',
+      name: 'SizePage',
+      component: () => import('@/views/SizePage.vue')
     },
   ]
 })

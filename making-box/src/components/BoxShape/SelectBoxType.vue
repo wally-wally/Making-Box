@@ -38,6 +38,7 @@ export default {
 img {
   display: inline-block;
   width: 300px;
+  height: 300px;
   margin: 15px;
   transition: all .2s;
 }

@@ -25,7 +25,7 @@ export default {
   methods: {
     saveTool(tool) {
       this.$store.commit('saveTool', tool)
-      this.$router.push('/hole')
+      this.$router.push('/size')
     }
   }
 }

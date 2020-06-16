@@ -57,4 +57,4 @@ $ npm run serve
 
 :heavy_check_mark: <b>Deploy URL</b>
 
-You are accessible through deploy URL [].
+You are accessible through deploy URL https://art-sample-2.firebaseapp.com.
