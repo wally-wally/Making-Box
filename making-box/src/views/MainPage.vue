@@ -26,7 +26,7 @@ img {
   margin: 0 10px;
   width: 300px;
   transform: translateX(30px);
-  filter: brightness(60%);
+  filter: drop-shadow(2px 2px 4px black);
   animation: flicker 1s linear alternate infinite;
 }
 
@@ -42,11 +42,11 @@ img:hover {
 
 @keyframes flicker {
   0% {
-    filter: brightness(60%);
+    opacity: 0.6;
   }
 
   100% {
-    filter: brightness(100%);
+    opacity: 1;
   }
 }
 </style>

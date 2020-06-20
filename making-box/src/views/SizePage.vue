@@ -1,11 +1,10 @@
 <template>
   <div class="wrapper">
-    <div class="alert">{{ alert[this.$store.state.tool] }}</div>
     <div class="select-size">
       <div class="select-title">{{ title[this.$store.state.tool] }}</div>
       <div class="size-images">
-        <img src="../assets/images/hole.png" alt="small-size">
-        <img src="../assets/images/hole.png" alt="big-size">
+        <img :src="decorateImgFile()" alt="small-size">
+        <img :src="decorateImgFile()" alt="big-size">
       </div>
     </div>
   </div>
@@ -24,18 +23,23 @@ export default {
         'awl': '<구멍 크기 설정>',
         'saw': '<스크래치 길이 설정>',
         'sticker': '<스티커 크기 설정>'
+      },
+      imgFileName: {
+        'awl': 'hole',
+        'saw': 'scratch',
+        'sticker': 'sticker'
       }
     }
   },
+  methods: {
+    decorateImgFile() {
+      return require(`../assets/images/decorate/${this.imgFileName[this.$store.state.tool]}.png`)
+    }
+  }
 }
 </script>
 
 <style scoped>
-.alert {
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
 .select-title {
   display: flex;
   flex-wrap: wrap;
@@ -53,7 +57,11 @@ export default {
 }
 
 .size-images img:first-child {
-  width: 48px;
+  width: 90px;
+}
+
+.size-images img:last-child {
+  width: 125px;
 }
 
 .size-images img:hover {

@@ -8,12 +8,15 @@
       <ul class="tools">
         <li class="tool">
           <img src="../assets/images/tools/awl.png" alt="awl" @click="saveTool('awl')">
+          <p @click="saveTool('awl')">송곳</p>
         </li>
         <li class="tool">
           <img src="../assets/images/tools/saw.png" alt="saw" @click="saveTool('saw')">
+          <p @click="saveTool('saw')">톱</p>
         </li>
         <li class="tool">
           <img src="../assets/images/tools/sticker.png" alt="sticker" @click="saveTool('sticker')">
+          <p @click="saveTool('sticker')">스티커</p>
         </li>
       </ul>
     </div>
@@ -54,6 +57,7 @@ export default {
 .tool {
   margin: 20px;
   display: inline-flex;
+  flex-direction: column;
 }
 
 .tool img {
@@ -68,6 +72,15 @@ export default {
   transform: scale(1.1);
 }
 
+.tool p {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.tool p:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 700px) {
   .tool {
     display: block;
@@ -77,7 +90,17 @@ export default {
 @media (max-width: 450px) {
   .wrapper {
     height: 100%;
-    margin-top: 2.2rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .wrapper {
+    margin-top: 5.2rem;
+  }
+
+  .select-tool-title {
+    font-size: 22px;
   }
 }
 </style>
