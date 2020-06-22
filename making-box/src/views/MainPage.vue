@@ -8,7 +8,11 @@
 export default {
   methods: {
     googleLogin() {
-      this.$store.dispatch('googleLogin')
+      if (this.$store.state.token) {
+        this.$router.push('/inputname')
+      } else {
+        this.$store.dispatch('googleLogin')
+      }
     }
   }
 }

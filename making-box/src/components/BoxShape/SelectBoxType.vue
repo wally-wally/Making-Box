@@ -49,10 +49,4 @@ img:hover {
   transform: scale(1.1);
   opacity: 0.6;
 }
-
-@media (max-width: 450px) {
-  img {
-    width: 60%;
-  }
-}
 </style>

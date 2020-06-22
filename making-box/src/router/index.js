@@ -35,5 +35,14 @@ export const router = new Router({
       name: 'SizePage',
       component: () => import('@/views/SizePage.vue')
     },
+    {
+      path: '/result',
+      component: () => import('@/views/BoxResultPage.vue'),
+      children: [
+        { path: 'random', name: 'BoxRandom', component: () => import('@/components/BoxResult/BoxRandom.vue') },
+        { path: 'checksave', name: 'CheckSave', component: () => import('@/components/BoxResult/CheckSave.vue') },
+        { path: 'boxshare', name: 'BoxShare', component: () => import('@/components/BoxResult/BoxShare.vue') },
+      ]
+    }
   ]
 })

@@ -1,5 +1,5 @@
 import firebase from 'firebase/app'
-// import 'firebase/firestore'
+import 'firebase/firestore'
 import 'firebase/auth'
 
 const API_KEY = process.env.VUE_APP_FIREBASE_API_KEY
@@ -24,7 +24,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-// const firestore = firebase.firestore()
+const firestore = firebase.firestore()
 
 export default {
   loginWithGoogle() {
@@ -34,5 +34,22 @@ export default {
 		}).catch(function(error) {
       return error
 		})
-	}
+  },
+  getBoxes() {
+    const boxCollection = firestore.collection('box')
+    return boxCollection.orderBy('boxIdx', 'desc').get().then((snapshot) => {
+      return snapshot.docs.map((doc) => {
+        return doc.data()
+      })
+    })
+  },
+  postBox(data) {
+    firestore.collection('box').get().then((snapshot) => {
+      let boxCount = snapshot.docs.length
+      let boxIdx = snapshot.docs[boxCount - 1].data().boxIdx + 1
+      const boxCollection = firestore.collection('box').doc(boxIdx.toString())
+      data['boxIdx'] = boxIdx
+      return boxCollection.set({ ...data })
+    })
+  }
 }

@@ -15,6 +15,7 @@ export const store = new Vuex.Store({
     tool: sessionStorage.getItem('tool'),
     decorateSize: sessionStorage.getItem('decorateSize'),
     decorateCount: sessionStorage.getItem('decorateCount'),
+    imgIdx: sessionStorage.getItem('imgIdx')
   },
   mutations: {
     saveUserInfo(state, userInfo) {
@@ -46,6 +47,19 @@ export const store = new Vuex.Store({
       state.decorateCount = count
       sessionStorage.setItem('decorateCount', count)
     },
+    saveImgIdx(state, idx) {
+      state.imgIdx = idx
+      sessionStorage.setItem('imgIdx', idx)
+    },
+    resetData() {
+      sessionStorage.removeItem('boxName')
+      sessionStorage.removeItem('boxType')
+      sessionStorage.removeItem('tool')
+      sessionStorage.removeItem('decorateSize')
+      sessionStorage.removeItem('decorateCount')
+      sessionStorage.removeItem('imgIdx')
+      router.push('/')
+    }
   },
   actions: {
     async googleLogin(context) {

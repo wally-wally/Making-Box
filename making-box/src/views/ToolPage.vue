@@ -85,18 +85,16 @@ export default {
   .tool {
     display: block;
   }
-}
 
-@media (max-width: 450px) {
   .wrapper {
     height: 100%;
-    margin-top: 3rem;
+    padding-top: 4rem;
   }
 }
 
 @media (max-width: 350px) {
   .wrapper {
-    margin-top: 5.2rem;
+    padding-top: 6rem;
   }
 
   .select-tool-title {

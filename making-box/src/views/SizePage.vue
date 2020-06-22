@@ -11,7 +11,7 @@
       <div class="decorate-count-title">{{ countTitle[this.$store.state.tool] }}</div>
       <form class="input-wrapper" @submit.prevent="goMakingPage">
         <input type="number" min="1" max="4" v-model.number="decorateCount" placeholder="1~4 사이 숫자를 입력하세요">
-        <i class="fas fa-caret-square-right" type="submit" @click="goMakingPage"></i>
+        <div class="go-make-btn" @click="goMakingPage">제작된 박스 확인하기</div>
       </form>
     </div>
   </div>
@@ -36,7 +36,7 @@ export default {
         'saw': 'scratch',
         'sticker': 'sticker'
       },
-      decorateCount: null
+      decorateCount: ''
     }
   },
   methods: {
@@ -49,7 +49,12 @@ export default {
       document.querySelector('.decorate-count').style.display = 'block'
     },
     goMakingPage() {
-
+      if (this.decorateCount === '' || !(this.decorateCount >= 1 && this.decorateCount <= 4)) {
+        alert('1에서 4 사이의 숫자를 입력해주세요.')
+        return
+      }
+      this.$store.commit('saveDecorateCount', this.decorateCount)
+      this.$router.push('/result/random')
     }
   },
   watch: {
@@ -105,16 +110,12 @@ export default {
 }
 
 .input-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 6px;
 }
 
 input {
   padding: 8px;
   font-size: 15px;
-  margin-right: 10px;
   background-color: #333;
   border: transparent;
   border-radius: 8px;
@@ -123,12 +124,21 @@ input {
   color: #eee;
 }
 
-i {
-  font-size: 24px;
+.go-make-btn {
+  width: 180px;
+  margin: 20px auto 0;
+  font-size: 16px;
+  border: 1px solid silver;
+  padding: 6px 2px;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  color: #333;
+  transition: all .2s;
 }
 
-i:hover {
+.go-make-btn:hover {
   cursor: pointer;
+  box-shadow: 2px 2px 4px #888;
 }
 
 .decorate-count {
