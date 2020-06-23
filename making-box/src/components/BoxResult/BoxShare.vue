@@ -3,7 +3,7 @@
     <div class="box-contents" v-if="boxData.length">
       <div class="box" v-for="box in boxData" :key="box.boxIdx">
         <img :src="imgUrl(box)" alt="box-image">
-        <div class="user-name">{{ box.username }}</div>
+        <div class="user-name">{{ box.boxName }}</div>
       </div>
     </div>
     <div class="box-contents alert-message" v-else>

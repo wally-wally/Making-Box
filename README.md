@@ -10,7 +10,7 @@
 
 - It's a project that I worked with as a mentor for <a href="https://github.com/ICY-SIM" target="_blank">ICY-SIM</a>'s Art-works project.
 - Project Title : `Making Box`
-- Project Period : 20.05.28 ~ ing
+- Project Period : 20.05.28 ~ 20.06.22
 
 <br>
 
@@ -58,3 +58,9 @@ $ npm run serve
 :heavy_check_mark: <b>Deploy URL</b>
 
 You are accessible through deploy URL https://art-sample-2.firebaseapp.com.
+
+<br>
+
+## :five: Homepage Configuration
+
+![preview](https://user-images.githubusercontent.com/52685250/85379109-5e3c4d00-b576-11ea-8c96-cde5545f8136.png)

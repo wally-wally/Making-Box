@@ -38,7 +38,7 @@ export default {
       await FirebaseService.postBox(boxData)
       setTimeout(() => {
         this.$router.push('/result/boxshare')
-      }, 1000)
+      }, 500)
     }
   }
 }
